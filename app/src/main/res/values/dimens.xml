@@ -5,7 +5,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="content_great_margin">72dp</dimen>
 
-    <!-- Sizes -->
+    <!-- Sizes  -->
     <dimen name="size_small_24">24sp</dimen>
     <dimen name="size_medium_56">56sp</dimen>
     <dimen name="size_large_72">72sp</dimen>
