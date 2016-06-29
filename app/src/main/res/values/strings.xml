@@ -25,4 +25,5 @@
     <string name="count_code_text">Строк кода</string>
     <string name="project_number">5</string>
     <string name="project_text">Проектов</string>
+    <string name="profile_user_photo">User profile photo</string>
 </resources>
