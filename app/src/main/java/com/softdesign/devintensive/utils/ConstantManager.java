@@ -1,6 +1,7 @@
 package com.softdesign.devintensive.utils;
 
 /**
+ * Основные константы приложения
  * @author ryabykh_ms
  */
 public interface ConstantManager {
@@ -13,4 +14,12 @@ public interface ConstantManager {
     String USER_VK_KEY = "USER_3_KEY";
     String USER_GIT_KEY = "USER_4_KEY";
     String USER_BIO_KEY = "USER_5_KEY";
+    String USER_PHOTO_KEY = "USER_PHOTO_KEY";
+
+    int REQUEST_CAMERA_PICTURE = 99;
+    int REQUEST_GALLERY_PICTURE = 88;
+    int PERMISSION_REQUEST_SETTINGS_CODE = 101;
+    int CAMERA_REQUEST_PERMISSION_CODE = 102;
+
+
 }

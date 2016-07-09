@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/profile_image_size">
+    <ImageView
+        android:id="@+id/user_photo_img"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/profile_image_size"
+        android:scaleType="centerCrop"
+        android:src="@drawable/user_bg"
+        android:contentDescription="@string/profile_user_photo_desc" />
+
+    <RelativeLayout
+        android:id="@+id/profile_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/user_bg"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_profile.placeholder.image"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/photo_placeholder"
+            android:layout_marginBottom="@dimen/spacing_small_8"/>
+
+        <ImageView
+            android:id="@+id/photo_placeholder"
+            android:layout_width="@dimen/placeholder_photo_size_90"
+            android:layout_height="@dimen/placeholder_photo_size_90"
+            android:scaleType="centerCrop"
+            android:src="@drawable/add_a_photo_48px"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/spacing_bigger_56"
+            android:contentDescription="@string/user_profile_image_placeholder_desc"/>
+    </RelativeLayout>
+</FrameLayout>

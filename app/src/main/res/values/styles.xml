@@ -15,7 +15,7 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 
     <style name="icon">
@@ -109,6 +109,18 @@
         <item name="android:fullDark">@android:color/transparent</item>
     </style>
 
+    <style name="user_dialog">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 
+    <style name="user_dialog_image">
+        <item name="android:layout_width">@dimen/spacing_big_48</item>
+        <item name="android:layout_height">@dimen/spacing_big_48</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
 
 </resources>

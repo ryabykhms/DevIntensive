@@ -5,6 +5,9 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 /**
+ * Вызывается в момент запуска приложения.
+ * Используется для инициализации базы данных при старте приложения, чтобы можно было бы получить
+ * компоненты и т.д.
  * @author ryabykh_ms
  */
 public class DevIntensiveApplication extends Application {
