@@ -8,18 +8,19 @@
     android:orientation="horizontal"
     android:paddingBottom="@dimen/spacing_medial_24"
     android:paddingTop="@dimen/spacing_medial_24"
-    app:layout_behavior=".utils.ScoreboxBehavior">
+    app:layout_behavior=".ui.view.behaviors.ScoreBoxBehavior">
 
     <LinearLayout
         style="@style/container">
 
         <TextView
+            android:id="@+id/user_info_rait_txt"
             style="@style/text.title"
-            android:text="@string/rating_number"/>
+            android:text="@string/profile.user_score.rait.dummy"/>
 
         <TextView
             style="@style/text"
-            android:text="@string/rating_text"/>
+            android:text="@string/profile.user_score.rait.hint"/>
     </LinearLayout>
 
     <View
@@ -31,12 +32,13 @@
         style="@style/container">
 
         <TextView
+            android:id="@+id/user_info_code_lines_txt"
             style="@style/text.title"
-            android:text="@string/count_code_number"/>
+            android:text="@string/profile.user_score.code_lines.dummy"/>
 
         <TextView
             style="@style/text"
-            android:text="@string/count_code_text"/>
+            android:text="@string/profile.user_score.code_lines.hint"/>
     </LinearLayout>
 
     <View
@@ -48,12 +50,13 @@
         style="@style/container">
 
         <TextView
+            android:id="@+id/user_info_project_txt"
             style="@style/text.title"
-            android:text="@string/project_number"/>
+            android:text="@string/profile.user_score.project.dummy"/>
 
         <TextView
             style="@style/text"
-            android:text="@string/project_text"/>
+            android:text="@string/profile.user_score.project.hint"/>
     </LinearLayout>
 
 </LinearLayout>

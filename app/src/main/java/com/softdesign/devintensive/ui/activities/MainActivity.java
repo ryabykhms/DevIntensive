@@ -26,10 +26,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.data.managers.DataManager;
+import com.softdesign.devintensive.data.network.res.UserModelRes;
 import com.softdesign.devintensive.ui.fragments.LoadPhotoDialogFragment;
+import com.softdesign.devintensive.utils.AppConfig;
 import com.softdesign.devintensive.utils.ConstantManager;
 import com.softdesign.devintensive.utils.EditTextWatcher;
 import com.softdesign.devintensive.utils.ImageSizeTransformation;
@@ -43,6 +46,13 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Главное активити приложения
@@ -88,6 +98,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @BindViews({R.id.phone_et, R.id.email_et, R.id.vk_et, R.id.git_et, R.id.about_et})
     List<EditText> mUserInfo;
 
+    //private TextView mUserValueRaiting, mUserValueCodeLines, mUserValueProjects;
+
+    @BindViews({R.id.user_info_rait_txt, R.id.user_info_code_lines_txt, R.id.user_info_project_txt})
+    List<TextView> mUserValueViews;
+
+    private String mUserFullName;
+
+    private boolean isProfileImageChange;
+
     private LoadPhotoDialogFragment mDialogFragment;
 
     private AppBarLayout.LayoutParams mAppBarParams;
@@ -112,7 +131,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
         Log.d(TAG, getString(R.string.log_callback_oncreate));
         ButterKnife.bind(this);
+        //mUserValueRaiting = (TextView) findViewById()
         mDataManager = DataManager.getInstance();
+        isProfileImageChange = false;
 
         mDialogFragment = new LoadPhotoDialogFragment();
         mAppBarParams = null;
@@ -126,9 +147,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         mSelectedImage = mDataManager.getPreferencesManager().loadUserPhoto();
 
+        initUserFullName();
         setupToolbar();
         setupDrawer();
-        loadUserInfoValues();
+        initUserFullName();
+        initUserInfoValue();
+        initUserFields();
 
         Picasso.with(this)
                 .load(mSelectedImage)
@@ -369,6 +393,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             changeEditMode(true);
             mCurrentEditMode = true;
         } else {
+            hideErrorMessagesUserInfo();
             if (mTextWatcher.isValidAllFields(mUserInfo)) {
                 changeEditMode(false);
                 mCurrentEditMode = false;
@@ -382,9 +407,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         .setAction(R.string.cancel_input, new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                loadUserInfoValues();
+                                initUserFields();
                                 changeEditMode(false);
-                                hideErrorMessagesUserInfo();
                                 mCurrentEditMode = false;
                             }
                         }).show();
@@ -419,6 +443,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         mAppBarParams = (AppBarLayout.LayoutParams) mCollapsingToolbar.getLayoutParams();
         if (actionBar != null) {
+            actionBar.setTitle(mUserFullName);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_24dp);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
@@ -433,6 +458,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         View headerView = navigationView != null ? navigationView.getHeaderView(0) : null;
         if(headerView != null) {
+            ((TextView)headerView.findViewById(R.id.user_name_txt)).setText(mUserFullName);
             ImageView drawerPhoto = (ImageView) headerView.findViewById(R.id.user_photo_drawer_img);
             Picasso.with(this)
                     .load(mSelectedImage)
@@ -478,6 +504,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case ConstantManager.REQUEST_GALLERY_PICTURE:
                 if (resultCode == RESULT_OK && data != null) {
                     mSelectedImage = data.getData();
+
                 }
                 break;
             case ConstantManager.REQUEST_CAMERA_PICTURE:
@@ -504,7 +531,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     /**
      * Переключает режимы редактирования. Если входим в режим редактирования, то:
-     * - загружем значения пользовательских полей {@link #loadUserInfoValues()};
+     * - загружем значения пользовательских полей {@link #initUserFields()};
      * - меняем иконку FloatingActionButton;
      * - устанавливаем поля для редактирования в true с помощью {@link #Enabled};
      * - делаем placeholder видимым;
@@ -521,7 +548,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
      */
     private void changeEditMode(boolean mode) {
         if (mode) {
-            loadUserInfoValues();
+            initUserFields();
             mFab.setImageResource(R.drawable.ic_done_24dp);
             ButterKnife.apply(mUserInfo, Enabled, true);
             mProfilePlaceholder.setVisibility(View.VISIBLE);
@@ -539,16 +566,30 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
+
     /**
      * Загружаем данные в пользовательские поля с помощью
      * {@link com.softdesign.devintensive.data.managers.PreferencesManager}
      * и {@link DataManager}.
      */
-    private void loadUserInfoValues() {
+    private void initUserFields() {
         List<String> userData = mDataManager.getPreferencesManager().loadUserProfileData();
         for (int i = 0; i < userData.size(); i++) {
             mUserInfo.get(i).setText(userData.get(i));
         }
+    }
+
+    private void initUserInfoValue() {
+        List<String> userData = mDataManager.getPreferencesManager().loadUserProfileValues();
+        for (int i = 0; i < userData.size(); i++) {
+            mUserValueViews.get(i).setText(userData.get(i));
+        }
+    }
+
+    private void initUserFullName() {
+        String userFirstName = mDataManager.getPreferencesManager().loadUserFirstName();
+        String userSecondName = mDataManager.getPreferencesManager().loadUserSecondName();
+        mUserFullName = userSecondName + " " + userFirstName;
     }
 
     /**
@@ -618,4 +659,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 .into(mProfileImage);
         mDataManager.getPreferencesManager().saveUserPhoto(selectedImage);
     }
+
+
 }

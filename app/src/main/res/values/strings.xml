@@ -1,36 +1,43 @@
 <resources>
     <!-- App strings -->
-    <string name="app_name">Рябых Максим</string>
+    <string name="app_name">DevIntensiveApp</string>
 
     <!-- User profile strings -->
     <string name="admin_email">upstrocker@gmail.com</string>
-    <string name="rating_number">5</string>
-    <string name="rating_text">Рейтинг</string>
-    <string name="count_code_number">5</string>
-    <string name="count_code_text">Строк кода</string>
-    <string name="project_number">5</string>
-    <string name="project_text">Проектов</string>
-    <string name="phone_hint">Мобильный</string>
-    <string name="phone_text">""</string>
-    <string name="email_hint">E-mail</string>
-    <string name="email_text">upstrocker@gmail.com</string>
-    <string name="vk_hint">Профиль в VK</string>
-    <string name="vk_text">vk.com/upstrocke</string>
-    <string name="git_hint">Репозиторий</string>
-    <string name="git_text">github.com/upstrocker</string>
-    <string name="about_hint">О себе</string>
-    <string name="about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    <string name="profile.user_score.rait.dummy">5</string>
+    <string name="profile.user_score.rait.hint">Рейтинг</string>
+    <string name="profile.user_score.code_lines.dummy">5</string>
+    <string name="profile.user_score.code_lines.hint">Строк кода</string>
+    <string name="profile.user_score.project.dummy">5</string>
+    <string name="profile.user_score.project.hint">Проектов</string>
+    <string name="profile.phone.hint">Мобильный</string>
+    <string name="profile.phone.dummy">"+7 961 164–07–94"</string>
+    <string name="profile.email.hint">E-mail</string>
+    <string name="profile.email.dummy">upstrocker@gmail.com</string>
+    <string name="profile.vk.hint">Профиль в VK</string>
+    <string name="profile.vk.dummy">vk.com/upstrocke</string>
+    <string name="profile.git.hint">Репозиторий</string>
+    <string name="profile.git.dummy">github.com/upstrocker</string>
+    <string name="profile.bio.hint">О себе</string>
+    <string name="profile.bio.dummy">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
         fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
         officia deserunt mollit anim id est laborum.</string>
     <string name="user_profile.placeholder.image">Изменить фотографию пользователя</string>
-    <string name="choose_photo_src">Выберите источник изображения</string>
-    <string name="user_profile.dialog.gallery">Загрузить из галлереи</string>
-    <string name="user_profile.dialog.camera">Сделать снимок</string>
+    <string name="choose_photo_dialog.title">Выберите источник изображения</string>
+    <string name="choose_photo_dialog.gallery">Загрузить из галлереи</string>
+    <string name="choose_photo_dialog.camera">Сделать снимок</string>
     <string name="mail_intent_chooser_message">Отправить email с помощью…</string>
     <string name="cancel_input">Отменить ввод</string>
+
+    <!-- AuthActivity strings -->
+    <string name="auth.authorization_enter">Войти</string>
+    <string name="auth.email">Введите e-mail</string>
+    <string name="auth.password">Введите пароль</string>
+    <string name="auth.login">Войти</string>
+    <string name="auth.remember">Забыли пароль?</string>
 
     <!-- ImageView description strings -->
     <string name="phone_call_icon_desc">Call</string>
@@ -71,5 +78,9 @@
     <!-- Check permissions strings -->
     <string name="please_get_permissions_msg">Для корректной работы приложения необходимо дать требуемые разрешения</string>
     <string name="permit_msg">Разрешить</string>
+
+    <!-- Font Family -->
+    <string name="ff_regular">sans-serif</string>
+    <string name="ff_medium">sans-serif-medium</string>
 
 </resources>

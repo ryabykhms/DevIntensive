@@ -1,4 +1,4 @@
-package com.softdesign.devintensive.utils;
+package com.softdesign.devintensive.ui.view.behaviors;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
@@ -12,8 +12,8 @@ import android.widget.LinearLayout;
  * убирались отступы
  * @author ryabykh_ms
  */
-public class ScoreboxBehavior extends CoordinatorLayout.Behavior<LinearLayout> {
-    public ScoreboxBehavior(Context context, AttributeSet attributeSet) {
+public class ScoreBoxBehavior extends CoordinatorLayout.Behavior<LinearLayout> {
+    public ScoreBoxBehavior(Context context, AttributeSet attributeSet) {
 
     }
 

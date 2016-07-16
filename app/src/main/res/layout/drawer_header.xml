@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="@string/email_text"
+            android:text="@string/profile.email.dummy"
             android:textColor="@color/white"
             android:textSize="14sp"/>
     </LinearLayout>

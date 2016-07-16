@@ -11,8 +11,8 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:layout_weight="1"
-        android:text="@string/choose_photo_src"
-        android:textSize="@dimen/text_size_16"/>
+        android:text="@string/choose_photo_dialog.title"
+        android:textSize="@dimen/font_small_16"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,8 +28,8 @@
 
             <TextView
                 style="@style/text"
-                android:text="@string/user_profile.dialog.camera"
-                android:textSize="@dimen/text_size_14"/>
+                android:text="@string/choose_photo_dialog.camera"
+                android:textSize="@dimen/font_small_14"/>
 
             <ImageView
                 style="@style/user_dialog_image"
@@ -43,8 +43,8 @@
 
             <TextView
                 style="@style/text"
-                android:text="@string/user_profile.dialog.gallery"
-                android:textSize="@dimen/text_size_14"/>
+                android:text="@string/choose_photo_dialog.gallery"
+                android:textSize="@dimen/font_small_14"/>
 
             <ImageView
                 style="@style/user_dialog_image"
