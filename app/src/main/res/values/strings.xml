@@ -1,12 +1,18 @@
 <resources>
+    <!-- App strings -->
     <string name="app_name">Рябых Максим</string>
+
+    <!-- User profile strings -->
+    <string name="admin_email">upstrocker@gmail.com</string>
+    <string name="rating_number">5</string>
+    <string name="rating_text">Рейтинг</string>
+    <string name="count_code_number">5</string>
+    <string name="count_code_text">Строк кода</string>
+    <string name="project_number">5</string>
+    <string name="project_text">Проектов</string>
     <string name="phone_hint">Мобильный</string>
+    <string name="phone_text">""</string>
     <string name="email_hint">E-mail</string>
-    <string name="phone_call_icon">Call</string>
-    <string name="phone_call_talk_icon">Call talk</string>
-    <string name="email_icon">Email</string>
-    <string name="email_send_icon">Email send</string>
-    <string name="phone_text">+7(961)164–07–94</string>
     <string name="email_text">upstrocker@gmail.com</string>
     <string name="vk_hint">Профиль в VK</string>
     <string name="vk_text">vk.com/upstrocke</string>
@@ -19,11 +25,51 @@
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
         fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
         officia deserunt mollit anim id est laborum.</string>
-    <string name="rating_number">5</string>
-    <string name="rating_text">Рейтинг</string>
-    <string name="count_code_number">5</string>
-    <string name="count_code_text">Строк кода</string>
-    <string name="project_number">5</string>
-    <string name="project_text">Проектов</string>
-    <string name="profile_user_photo">User profile photo</string>
+    <string name="user_profile.placeholder.image">Изменить фотографию пользователя</string>
+    <string name="choose_photo_src">Выберите источник изображения</string>
+    <string name="user_profile.dialog.gallery">Загрузить из галлереи</string>
+    <string name="user_profile.dialog.camera">Сделать снимок</string>
+    <string name="mail_intent_chooser_message">Отправить email с помощью…</string>
+    <string name="cancel_input">Отменить ввод</string>
+
+    <!-- ImageView description strings -->
+    <string name="phone_call_icon_desc">Call</string>
+    <string name="phone_call_talk_icon_desc">Call talk</string>
+    <string name="email_icon_desc">Email</string>
+    <string name="email_send_icon_desc">Email send</string>
+    <string name="vk_icon_desc">Vkontakte</string>
+    <string name="github_icon_desc">GitHub</string>
+    <string name="profile_user_photo_desc">User profile photo</string>
+    <string name="add_photo_from_camera_desc">Add Photo From Camera</string>
+    <string name="add_photo_from_gallery_desc">Add Photo From Gallery</string>
+    <string name="user_profile_image_placeholder_desc">User profile image placeholder</string>
+
+    <!-- Error message strings -->
+    <string name="user_profile.invalidate.number">Неверный формат номера телефона</string>
+    <string name="user_profile.invalidate.email">Неверный формат email адреса</string>
+    <string name="user_profile.invalidate.vk">Неверный формат адреса VK</string>
+    <string name="user_profile.invalidate.github">Неверный формат ссылки на GitHub</string>
+    <string name="invalid_input">Неверный ввод</string>
+    <string name="error_menu_open">Ошибка открытия меню!</string>
+    <string name="report_about_error">Сообщить об ошибке</string>
+    <string name="can_not_create_file_err">Ошибка! Не получается создать файл!</string>
+
+    <!-- Log strings -->
+    <string name="log_callback_oncreate">onCreate</string>
+    <string name="log_callback_onstart">onStart</string>
+    <string name="log_callback_onresume">onResume</string>
+    <string name="log_callback_onpause">onPause</string>
+    <string name="log_callback_onstop">onStop</string>
+    <string name="log_callback_ondestroy">onDestroy</string>
+    <string name="log_callback_onrestart">onRestart</string>
+
+    <!-- Auth form strings -->
+    <string name="password_hint">Пароль</string>
+    <string name="auth_enter">Войти</string>
+    <string name="forgot_password">Забыли пароль?</string>
+
+    <!-- Check permissions strings -->
+    <string name="please_get_permissions_msg">Для корректной работы приложения необходимо дать требуемые разрешения</string>
+    <string name="permit_msg">Разрешить</string>
+
 </resources>

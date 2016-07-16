@@ -1,6 +1,7 @@
 package com.softdesign.devintensive.data.managers;
 
 /**
+ * Singleton. Единая точка общения с данными. 
  * @author ryabykh_ms
  */
 public class DataManager {

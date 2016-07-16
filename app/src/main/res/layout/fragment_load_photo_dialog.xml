@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/user_bg"
+              android:orientation="vertical"
+              tools:context=".ui.fragments.LoadPhotoDialogFragment">
+
+    <TextView
+        style="@style/text"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:text="@string/choose_photo_src"
+        android:textSize="@dimen/text_size_16"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/add_photo_from_camera_ll"
+            style="@style/user_dialog">
+
+            <TextView
+                style="@style/text"
+                android:text="@string/user_profile.dialog.camera"
+                android:textSize="@dimen/text_size_14"/>
+
+            <ImageView
+                style="@style/user_dialog_image"
+                android:src="@drawable/ic_add_a_photo_black_24dp"
+                android:contentDescription="@string/add_photo_from_camera_desc"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/add_photo_from_gallery_ll"
+            style="@style/user_dialog">
+
+            <TextView
+                style="@style/text"
+                android:text="@string/user_profile.dialog.gallery"
+                android:textSize="@dimen/text_size_14"/>
+
+            <ImageView
+                style="@style/user_dialog_image"
+                android:src="@drawable/ic_collections_black_24dp"
+                android:contentDescription="@string/add_photo_from_gallery_desc"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
